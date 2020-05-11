@@ -4,7 +4,7 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Nikal Morgan"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -23,8 +23,15 @@ __author__ = "???"
 
 
 def verbing(s):
-    # your code here
-    return
+    if len(s) >= 3:
+        if "ing" in s:
+            ly = s + "ly"
+            return ly
+        else:
+            ing = s + "ing"
+            return ing
+    else: 
+        return s
 
 
 # E. not_bad
@@ -37,8 +44,17 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
-    return
+    if "not" in s and "bad" in s:
+        nope = s.index("not")
+        bad = s.index("bad")
+        if nope < bad:
+            occurrence = s[nope:bad + 3]
+            notbad = s.replace(occurrence, "good")
+            return notbad
+        else:
+            return s
+    else :
+        return s
 
 
 # F. front_back
@@ -52,8 +68,32 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
+    if (len(a) % 2) == 0:
+        # print("even")
+        a_half = int(len(a) / 2)
+        # print(a_half)
+        a_front = a[0: a_half]
+        a_back = a[a_half : len(a)]
+    else:
+        # print("odd")
+        a_half = int(len(a) / 2 + 0.5)
+        # print(a_half)
+        a_front = a[0: a_half]
+        a_back = a[a_half : len(a)]
+    
+    if (len(b) % 2) == 0:
+        # print("even")
+        b_half = int(len(b) / 2)
+        # print(b_half)
+        b_front = b[0: b_half]
+        b_back = b[b_half : len(b)]
+    else:
+        # print("odd")
+        b_half = int(len(b) / 2 + 0.5)
+        # print(b_half)
+        b_front = b[0: b_half]
+        b_back = b[b_half : len(b)]
+    return f"{a_front}{b_front}{a_back}{b_back}"
 
 
 # Provided simple test() function used in main() to print
